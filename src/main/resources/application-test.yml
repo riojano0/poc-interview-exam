@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: poc-exam-test
+  profiles: test
+  server:
+    port: 9090
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:h2:file:./target/h2db/db/exam-test;DB_CLOSE_DELAY=-1
+      driver-class-name: org.h2.Driver
+      username: exam-test
+      password:
+      hikari:
+            idle-timeout: 10000
